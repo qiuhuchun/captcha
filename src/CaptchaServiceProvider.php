@@ -1,6 +1,6 @@
 <?php
 
-namespace Mews\Captcha;
+namespace Qiuhuchun\Captcha;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;

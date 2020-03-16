@@ -1,6 +1,6 @@
 <?php
 
-namespace Mews\Captcha;
+namespace Qiuhuchun\Captcha;
 
 /**
  * Laravel 5 & 6 Captcha package
