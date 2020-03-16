@@ -8,7 +8,7 @@ use Illuminate\Validation\Factory;
 
 /**
  * Class CaptchaServiceProvider
- * @package Mews\Captcha
+ * @package Qiuhuchun\Captcha
  */
 class CaptchaServiceProvider extends ServiceProvider
 {
@@ -28,17 +28,17 @@ class CaptchaServiceProvider extends ServiceProvider
         if (strpos($this->app->version(), 'Lumen') !== false) {
             /* @var Router $router */
             $router = $this->app;
-            $router->get('captcha[/api/{config}]', 'Mews\Captcha\LumenCaptchaController@getCaptchaApi');
-            $router->get('captcha[/{config}]', 'Mews\Captcha\LumenCaptchaController@getCaptcha');
+            $router->get('captcha[/api/{config}]', 'Qiuhuchun\Captcha\LumenCaptchaController@getCaptchaApi');
+            $router->get('captcha[/{config}]', 'Qiuhuchun\Captcha\LumenCaptchaController@getCaptcha');
         } else {
             /* @var Router $router */
             $router = $this->app['router'];
             if ((double)$this->app->version() >= 5.2) {
-                $router->get('captcha/api/{config?}', '\Mews\Captcha\CaptchaController@getCaptchaApi')->middleware('web');
-                $router->get('captcha/{config?}', '\Mews\Captcha\CaptchaController@getCaptcha')->middleware('web');
+                $router->get('captcha/api/{config?}', '\Qiuhuchun\Captcha\CaptchaController@getCaptchaApi')->middleware('web');
+                $router->get('captcha/{config?}', '\Qiuhuchun\Captcha\CaptchaController@getCaptcha')->middleware('web');
             } else {
-                $router->get('captcha/api/{config?}', '\Mews\Captcha\CaptchaController@getCaptchaApi');
-                $router->get('captcha/{config?}', '\Mews\Captcha\CaptchaController@getCaptcha');
+                $router->get('captcha/api/{config?}', '\Qiuhuchun\Captcha\CaptchaController@getCaptchaApi');
+                $router->get('captcha/{config?}', '\Qiuhuchun\Captcha\CaptchaController@getCaptcha');
             }
         }
 
